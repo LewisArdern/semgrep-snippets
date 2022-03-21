@@ -1,0 +1,221 @@
+{
+	"Semgrep Pattern": {
+		"prefix": "!semgrep-pattern",
+		"body": [
+			"rules:",
+			"- id: new-rule",
+			"\tmessage: \"message_goes_here\"",
+			"\tlanguages: [generic]",
+			"\tseverity: WARNING",
+			"\tmetadata:",
+			"\t\tcategory: security",
+			"\t\treferences: |",
+			"\t\t\t- https://google.com",
+			"\tpatterns:",
+			"\t- pattern: |",
+			"\t\t\tpattern_goes_here",
+			"\t- pattern-inside: |",
+			"\t\t\tpattern_goes_here"
+		],
+		"description": "Create Semgrep Basic Pattern Boilerplate"
+	},
+	"Semgrep Metavariable Pattern": {
+		"prefix": "!semgrep-metavariable-pattern",
+		"body": [
+			"rules:",
+			"- id: new-rule",
+			"\tmessage: \"message_goes_here\"",
+			"\tlanguages: [generic]",
+			"\tseverity: WARNING",
+			"\tmetadata:",
+			"\t\tcategory: security",
+			"\t\treferences: |",
+			"\t\t\t- https://google.com",
+			"\tpatterns:",
+			"\t- pattern: |",
+			"\t\t\tpattern_goes_here",
+			"\t- pattern-not: |",
+			"\t\t\tpattern_goes_here",
+			"\t- metavariable-pattern:",
+			"\t\tmetavariable: \\$STRING",
+			"\t\tpatterns:",
+			"\t\t\t- pattern: value"
+		],
+		"description": "Create Semgrep Metavariable Pattern"
+	},
+	"Semgrep Taint Mode": {
+		"prefix": "!semgrep-taint",
+		"body": [
+			"rules:",
+			"- id: new-rule",
+			"\tmessage: message_goes_here",
+			"\tlanguages: [generic]",
+			"\tseverity: WARNING",
+			"\tmetadata:",
+			"\t\tcategory: security",
+			"\t\treferences: |",
+			"\t\t\t- https://google.com",
+			"\tmode: taint",
+			"\tpattern-sources:",
+			"\t- pattern: source_goes_here",
+			"\tpattern-sinks:",
+			"\t- pattern: sink_goes_here(...)",
+			"\tpattern-sanitizers:",
+			"\t- pattern: sanitize_goes_here(...)"
+
+		],
+		"description": "Create Semgrep Taint Boilerplate"
+		
+	},
+	"Semgrep Pattern Compare": {
+		"prefix": "!semgrep-metavariable-comparison",
+		"body": [
+			"rules:",
+			"- id: new-rule",
+			"\tmessage: message_goes_here",
+			"\tlanguages: [generic]",
+			"\tseverity: WARNING",
+			"\tmetadata:",
+			"\t\tcategory: security",
+			"\t\treferences: |",
+			"\t\t\t- https://google.com",
+			"\tpatterns:",
+			"\t- pattern: |",
+			"\t\t\tpattern_goes_here",
+			"- metavariable-comparison:",
+			"\tmetavariable: \\$VALUE",
+			"\tcomparison: $VALUE equality_value_goes_here value_goes_here"
+		],
+		"description": "Create Semgrep Metavariable Pattern Boilerplate"
+	},
+	"Semgrep Pattern Either": {
+		"prefix": "!semgrep-pattern-either",
+		"body": [
+			"- pattern-either:",
+			"\t- pattern: |",
+			"\t\t\tpattern_goes_here",
+			"\t- patterns:",
+			"\t\t- pattern: |",
+			"\t\t\t\tpattern_goes_here"
+		],
+		"description": "Advanced pattern-either Boilerplate"
+	},
+	"pattern": {
+		"prefix": "pattern:",
+		"body": [
+			"pattern: |",
+			"\t\tpattern_goes_here"
+		],
+		"description": "The pattern operator looks for code matching its expression. This can be basic expressions like $X == $X or unwanted function calls like hashlib.md5(...)."
+	},
+	"-pattern": {
+		"prefix": "- pattern:",
+		"body": [
+			"- pattern: |",
+			"\t\tpattern_goes_here"
+		],
+		"description": "The pattern operator looks for code matching its expression. This can be basic expressions like $X == $X or unwanted function calls like hashlib.md5(...)."
+	},
+	"patterns": {
+		"prefix": "patterns:",
+		"body": [
+			"patterns:",
+			"\t- pattern: pattern_goes_here",
+			"\t- pattern-not: pattern_goes_here"
+		],
+		"description": "The patterns operator performs a logical AND operation on one or more child patterns. This is useful for chaining multiple patterns together that all must be true."
+	},
+	"-patterns": {
+		"prefix": "- patterns:",
+		"body": [
+			"- patterns:",
+			"\t- pattern: |",
+			"\t\t\tpattern_goes_here",
+			"\t- pattern-not: |",
+			"\t\t\tpattern_goes_here"
+		],
+		"description": "The patterns operator performs a logical AND operation on one or more child patterns. This is useful for chaining multiple patterns together that all must be true."
+	},
+	"pattern-either": {
+		"prefix": "pattern-either:",
+		"body": [
+			"pattern-either:",
+			"\t- patterns:",
+			"\t\t- pattern: |",
+			"\t\t\t\tpattern_goes_here"
+		],
+		"description": "The pattern-either operator performs a logical OR operation on one or more child patterns. This is useful for chaining multiple patterns together where any may be true."
+	},
+	"-pattern-either": {
+		"prefix": "- pattern-either:",
+		"body": [
+			"- pattern-either:",
+			"\t- pattern: |",
+			"\t\t\tpattern_goes_here",
+			"\t- patterns:",
+			"\t\t- pattern: |",
+			"\t\t\t\tpattern_goes_here"
+		],
+		"description": "The pattern-either operator performs a logical OR operation on one or more child patterns. This is useful for chaining multiple patterns together where any may be true."
+	},
+	"-pattern-regex": {
+		"prefix": "- pattern-regex",
+		"body": [
+			"- pattern-regex: (value)"
+		],
+		"description": "The pattern-regex operator searches files for substrings matching the given PCRE pattern. This is useful for migrating existing regular expression code search functionality to Semgrep. PCRE \"Perl-Compatible Regular Expressions\" is a full-featured regex library that is widely compatible with Perl of course, but also with the respective regex libraries of Python, JavaScript, Go, Ruby, and Java."
+	},
+	"-pattern-not-regex": {
+		"prefix": "- pattern-not-regex:",
+		"body": [
+			"- pattern-not-regex: -value"
+		],
+		"description": "The pattern-not-regex operator filters results using a Python re regular expression. This is most useful when combined with regular-expression only rules, providing an easy way to filter findings without having to use negative lookaheads. pattern-not-regex will work with regular pattern clauses, too."
+	},
+	"-metavariable-regex": {
+		"prefix": "- metavariable-regex:",
+		"body": [
+			"- metavariable-regex:",
+			"\tmetavariable: \\$VALUE",
+			"\tregex: (value)"
+		],
+		"description": "The metavariable-regex operator searches metavariables for a Python re compatible expression. This is useful for filtering results based on a metavariable\\’s value. It requires the metavariable and regex keys and can be combined with other pattern operators."
+		
+	},
+	"-metavariable-pattern": {
+		"prefix": "- metavariable-pattern:",
+		"body": [
+			"- metavariable-pattern:",
+			"\tlanguage: languge_goes_here",
+			"\tmetavariable: \\$VALUE",
+			"\tpattern: pattern_goes_here"
+		],
+		"description": "The metavariable-pattern operator matches metavariables with a pattern formula. This is useful for filtering results based on a metavariable’s value. It requires the metavariable key, and exactly one key of pattern, patterns, pattern-either, or pattern-regex. This operator can be nested as well as combined with other operators."
+	},
+	"-metavariable-comparison": {
+		"prefix": "- metavariable-comparison:",
+		"body": [
+			"- metavariable-comparison:",
+			"\tmetavariable: \\$VALUE",
+			"\tcomparison: $VALUE equality_value_goes_here value_goes_here",
+		],
+		"description": "The metavariable-comparison operator compares metavariables against a basic Python comparison expression. This is useful for filtering results based on a metavariable's numeric value."
+	},
+	"-pattern-not": {
+		"prefix": "- pattern-not:",
+		"body": [
+			"- pattern-not: |",
+			"\t\tpattern_goes_here"
+		],
+		"description": "The pattern-not operator is the opposite of the pattern operator. It finds code that does not match its expression. This is useful for eliminating common false positives."
+	},
+	"-pattern-inside": {
+		"prefix": "- pattern-inside:",
+		"body": [
+			"- pattern-inside: |",
+			"\t\tpattern_goes_here",
+			"\t\t..."
+		],
+		"description": "The pattern-either operator performs a logical OR operation on one or more child patterns. This is useful for chaining multiple patterns together where any may be true."
+	}
+}
