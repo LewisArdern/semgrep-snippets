@@ -2,8 +2,9 @@
   "name": "semgrep-snippets",
   "displayName": "Semgrep Snippets",
   "description": "Semgrep Snippets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "lewisardern",
+  "icon": "semgrep-icon.png",
   "categories": [
     "Snippets"
   ],
