@@ -37,7 +37,7 @@ Ever wanted to build a starting template? Say now more, here are some to get you
 | `!semgrep-metavariable-pattern` | Create Semgrep Metavariable Pattern Boilerplate |
 | `!semgrep-taint` | Create Semgrep Taint Boilerplate |
 | `!semgrep-metavariable-comparison` | Create Semgrep Metavariable Pattern Boilerplate |
-| `!semgrep-metavariable-comparison` | Advanced pattern-either Boilerplate |
+| `!semgrep-pattern-either` | Advanced pattern-either Boilerplate |
 
 ## Installation
 
