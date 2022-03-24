@@ -38,6 +38,7 @@ Ever wanted to build a starting template? Say now more, here are some to get you
 | `!semgrep-taint` | Create Semgrep Taint Boilerplate |
 | `!semgrep-metavariable-comparison` | Create Semgrep Metavariable Pattern Boilerplate |
 | `!semgrep-pattern-either` | Advanced pattern-either Boilerplate |
+| `!semgrep-metadata` | Create basic metadata needed for rules CWE/OWASP |
 
 ## Installation
 
