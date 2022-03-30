@@ -1,0 +1,28 @@
+{
+	"Semgrep Pattern": {
+		"prefix": "!semgrep-go",
+		"body": [
+			"package main",
+			"",
+            "import (",
+            "\t\t\"bytes\"",
+            ")",
+            "",
+            "func bad() {",
+            "\t\t// ruleid: new-rule",
+            "}",
+            "",
+            "func good() {",
+            "\t\t// ok: new-rule",
+            "}",
+            "",
+            "func main() {",
+            "\t\tbad()",
+            "\t\tgood()",
+            "}"
+
+
+		],
+		"description": "Create Go Test Code"
+	}
+}

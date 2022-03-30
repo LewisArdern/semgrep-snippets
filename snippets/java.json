@@ -1,0 +1,28 @@
+{
+	"Semgrep Pattern": {
+		"prefix": "!semgrep-java",
+		"body": [
+			"package test;",
+			"",
+			"import test;",
+			"",
+			"public class App",
+			"{",
+			"    private static void bad() {",
+			"      // ruleid: new-rule",
+			"    }",
+			"",
+			"    private static void ok(String value) {",
+			"      // ok: new-rule",
+			"    }",
+			"",
+			"    public static void main( String[] args )",
+			"    {",
+			"        bad();",
+			"        ok(args[0]);",
+			"    }",
+			"}"
+		],
+		"description": "Create Java Test Code"
+	}
+}

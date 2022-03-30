@@ -231,8 +231,8 @@
 		"prefix": "- metavariable-comparison:",
 		"body": [
 			"- metavariable-comparison:",
-			"\tmetavariable: \\$VALUE",
-			"\tcomparison: $VALUE equality_value_goes_here value_goes_here",
+			"\t\tmetavariable: \\$VALUE",
+			"\t\tcomparison: $VALUE equality_value_goes_here value_goes_here",
 		],
 		"description": "The metavariable-comparison operator compares metavariables against a basic Python comparison expression. This is useful for filtering results based on a metavariable's numeric value."
 	},
