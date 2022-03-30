@@ -211,8 +211,8 @@
 		"prefix": "- metavariable-regex:",
 		"body": [
 			"- metavariable-regex:",
-			"\tmetavariable: \\$VALUE",
-			"\tregex: (value)"
+			"\t\tmetavariable: \\$VALUE",
+			"\t\tregex: (value)"
 		],
 		"description": "The metavariable-regex operator searches metavariables for a Python re compatible expression. This is useful for filtering results based on a metavariable\\’s value. It requires the metavariable and regex keys and can be combined with other pattern operators."
 		
@@ -221,9 +221,9 @@
 		"prefix": "- metavariable-pattern:",
 		"body": [
 			"- metavariable-pattern:",
-			"\tlanguage: languge_goes_here",
-			"\tmetavariable: \\$VALUE",
-			"\tpattern: pattern_goes_here"
+			"\t\tlanguage: languge_goes_here",
+			"\t\tmetavariable: \\$VALUE",
+			"\t\tpattern: pattern_goes_here"
 		],
 		"description": "The metavariable-pattern operator matches metavariables with a pattern formula. This is useful for filtering results based on a metavariable’s value. It requires the metavariable key, and exactly one key of pattern, patterns, pattern-either, or pattern-regex. This operator can be nested as well as combined with other operators."
 	},
